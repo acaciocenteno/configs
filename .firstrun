@@ -1,0 +1,11 @@
+if [ ! -d ~/.ssh ]; then
+	mkdir ~/.ssh
+	chmod 771 ~/.ssh
+	mv ssh_config ~/.ssh/config
+	mv ssh_authorized_keys ~/.ssh/authorized_keys
+	chmod 600 ~/.ssh/*
+fi
+
+if [ ! -d ~/code ]; then
+	mkdir ~/code
+fi

@@ -1,0 +1,30 @@
+[user]
+	name = Acácio Centeno
+	email = acaciocenteno@gmail.com
+[color]
+	ui = true
+[core]
+	excludesfile = /Users/acacio/.gitignore_global
+	editor = emacs
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[merge]
+	tool = vimdiff
+[alias]
+	a  = add
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	ph = push
+	p  = pull
+	unst = reset HEAD --
+	last = log -1 HEAD
+[push]
+	default = simple
+[help]
+	autocorrect = 1
