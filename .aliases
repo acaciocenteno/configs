@@ -66,3 +66,7 @@ if [ "${os}" == "Darwin" -a -f ".aliases.osx" ]; then
 elif [ "${os}" == "Linux" -a -f ".aliases.linux" ]; then
 	source .aliases.linux
 fi
+
+# Percol based kill
+alias pk="ps aux | percol | awk '{ print \$2 }' | xargs kill"
+alias spk="sudo ps aux | percol | awk '{ print \$2 }' | xargs kill"
