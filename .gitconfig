@@ -3,6 +3,7 @@
 	email = acaciocenteno@gmail.com
 [color]
 	ui = true
+	pager = true
 [core]
 	excludesfile = /Users/acacio/.gitignore_global
 	editor = emacs
@@ -23,6 +24,9 @@
 	ph = push
 	p  = pull
 	cp = cherry-pick
+	df = diff
+	tr = log --color --graph --all --decorate --pretty=oneline
+	trf = log --color --graph --all --decorate 
 	unst = reset HEAD --
 	last = log -1 HEAD
 [push]
