@@ -22,6 +22,7 @@
 	st = status
 	ph = push
 	p  = pull
+	cp = cherry-pick
 	unst = reset HEAD --
 	last = log -1 HEAD
 [push]
