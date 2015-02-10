@@ -16,7 +16,9 @@ ls_command="/bin/ls"
 
 # Detect which `ls` flavor is in use
 # Yes, this could be on O.S. specific section, but...
-if [ ls --color > /dev/null 2>&1 ] || [ -f /usr/local/Cellar/coreutils/8.23/libexec/gnubin/ls ]; then
+ls --color > /dev/null 2>&1
+
+if [ $? -eq 0 ] || [ -f /usr/local/Cellar/coreutils/8.23/libexec/gnubin/ls ]; then
 	# Using GNU ls
 	export LS_COLORS="$LS_COLORS:di=38;05;31:ex=38;05;64:*.gz=38;05;124:ln=38;05;38"
 	colorflag="--color"
