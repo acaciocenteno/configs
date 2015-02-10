@@ -20,7 +20,7 @@ ls --color > /dev/null 2>&1
 
 if [ $? -eq 0 ] || [ -f /usr/local/Cellar/coreutils/8.23/libexec/gnubin/ls ]; then
 	# Using GNU ls
-	export LS_COLORS="$LS_COLORS:di=38;05;31:ex=38;05;64:*.gz=38;05;124:ln=38;05;38"
+	export LS_COLORS="$LS_COLORS:di=38;05;31:ex=38;05;64:*.gz=0;38;05;202:*.zip=0;38;05;202:*.bz2=*.zip=0;38;05;202:ln=38;05;38"
 	colorflag="--color"
 
 	if [ -f /usr/local/Cellar/coreutils/8.23/libexec/gnubin/ls ]; then
