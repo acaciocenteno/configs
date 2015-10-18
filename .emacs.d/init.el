@@ -77,6 +77,7 @@
 ;; Coisas dependentes do sistema
 (cond
  ((eq system-type 'berkeley-unix) (load-file "~/.emacs.d/keys_bsd.lisp"))
+ ((eq system-type 'gnu/linux)     (load-file "~/.emacs.d/keys_bsd.lisp"))
  ((eq system-type 'darwin)        (load-file "~/.emacs.d/keys_osx.lisp"))
  )
 
