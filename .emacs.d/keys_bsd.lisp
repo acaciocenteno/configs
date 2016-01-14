@@ -1,5 +1,7 @@
 ;; Atalho para abrir configs
 (global-set-key (kbd "C-c e") (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
+;; Reload config
+(global-set-key (kbd "C-c C-r") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
 
 ;; Usar setas para mover entre buffers
 (global-set-key (kbd "C-<up>") 'previous-buffer)
@@ -31,3 +33,7 @@
 ;; Substitui o C-g por ESC
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (global-set-key (kbd "C-z") 'undo)
+
+;; OrgMode
+(global-set-key (kbd "C-c a") 'org-agenda)
+
