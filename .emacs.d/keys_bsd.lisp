@@ -37,3 +37,19 @@
 ;; OrgMode
 (global-set-key (kbd "C-c a") 'org-agenda)
 
+
+
+(global-set-key (kbd "C-c") 'copy-line)
+(global-set-key (kbd "M-q") 'kill-region)
+
+(global-set-key (kbd "M-<up>") 'move-line-up)
+(global-set-key (kbd "M-<down>") 'move-line-down)
+(global-set-key (kbd "<ESC> <up>") 'move-line-up)
+(global-set-key (kbd "<ESC> <down>") 'move-line-down)
+
+
+;; duplicate a line
+(global-set-key (kbd "C-d") 'djcb-duplicate-line)
+
+;; duplicate a line and comment the first
+(global-set-key (kbd "C-u") (lambda()(interactive)(djcb-duplicate-line t)))
