@@ -30,6 +30,6 @@
 	unst = reset HEAD --
 	last = log -1 HEAD
 [push]
-	default = simple
+	default = tracking
 [help]
 	autocorrect = 1
