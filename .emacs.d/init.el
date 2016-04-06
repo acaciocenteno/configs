@@ -130,3 +130,54 @@
 
 ;; OrgMode
 (load-file "~/.emacs.d/org.lisp")
+
+
+(defun move-line-up ()
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2))
+
+(defun move-line-down ()
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1))
+
+
+(defun copy-line (arg)
+      "Copy lines (as many as prefix argument) in the kill ring.
+      Ease of use features:
+      - Move to start of next line.
+      - Appends the copy on sequential calls.
+      - Use newline as last char even on the last line of the buffer.
+      - If region is active, copy its lines."
+      (interactive "p")
+      (let ((beg (line-beginning-position))
+            (end (line-end-position arg)))
+        (when mark-active
+          (if (> (point) (mark))
+              (setq beg (save-excursion (goto-char (mark)) (line-beginning-position)))
+            (setq end (save-excursion (goto-char (mark)) (line-end-position)))))
+        (if (eq last-command 'copy-line)
+            (kill-append (buffer-substring beg end) (< end beg))
+          (kill-ring-save beg end)))
+      (kill-append "\n" nil)
+      (beginning-of-line (or (and arg (1+ arg)) 2))
+      (if (and arg (not (= 1 arg))) (message "%d lines copied" arg)))
+
+
+(defun djcb-duplicate-line (&optional commentfirst)
+  "comment line at point; if COMMENTFIRST is non-nil, comment the original"
+  (interactive)
+  (beginning-of-line)
+  (push-mark)
+  (end-of-line)
+  (let ((str (buffer-substring (region-beginning) (region-end))))
+    (when commentfirst
+      (comment-region (region-beginning) (region-end)))
+    (insert-string
+     (concat (if (= 0 (forward-line 1)) "" "\n") str "\n"))
+    (forward-line -1)))
+
+(define-key ac-completing-map "\C-s" nil)
+(define-key ac-completing-map "\C-f" 'ac-isearch)
