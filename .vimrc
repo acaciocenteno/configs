@@ -11,7 +11,7 @@ set foldlevel=99
 set shiftwidth=4
 set softtabstop=4
 set ts=4
-"set expandtab
+autocmd FileType py :set expandtab
 set tags=./tags,../tags,/home/acacio/tags
 set ignorecase
 set encoding=utf-8
@@ -44,22 +44,10 @@ map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 
 " Ack: Grepper
-map <leader>a <ESC>:Ack! 
+map <leader>a <ESC>:Ack!
 
 " Complexidade
 map <leader>c <ESC>:Complexity
-
-" Add the virtualenv's site-packages to vim path
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 " Integração com o git
 " set statusline=%{fugitive#statusline()}
@@ -78,9 +66,11 @@ map <leader>n :set nonumber<CR>
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
+set t_Co=256
 if &t_Co > 2 || has("gui_running")
 	set background=dark
-	colorscheme acacio
+	colorscheme experiment
+	"colorscheme acacio
 	"colorscheme desert
 	highlight SpellBad term=underline gui=undercurl guisp=Green 
 	set mouse=i
@@ -89,3 +79,24 @@ endif
 " Suporte a salvar sem ter permissão:
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 command WQ :execute 'W' | :q
+set switchbuf=useopen
+
+autocmd BufWritePre * %s/\s\+$//e
+
+let g:utl_cfg_hdl_scm_http_system = "silent !/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome '%u#%f' &"
+
+" Calculadora
+imap <silent> <C-C> <C-R>=string(eval(input("Calculate: ")))<CR>
+
+" Show syntax highlighting groups for word under cursor
+nmap <leader>z :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+" Mapeia C-t para C-[
+map <C-p> <C-t>
+map <C-]> <ESC>:stag 

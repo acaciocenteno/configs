@@ -17,6 +17,7 @@
 	tool = vimdiff
 [alias]
 	a  = add
+	av = add -pv
 	co = checkout
 	br = branch
 	ci = commit
@@ -26,7 +27,7 @@
 	cp = cherry-pick
 	df = diff
 	tr = log --color --graph --all --decorate --pretty=oneline
-	trf = log --color --graph --all --decorate 
+	trf = log --color --graph --all --decorate
 	unst = reset HEAD --
 	last = log -1 HEAD
 [push]
