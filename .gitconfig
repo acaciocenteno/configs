@@ -1,36 +1,32 @@
 [user]
-	name = Acácio Centeno
-	email = acaciocenteno@gmail.com
+	name = Luiz Cordeiro
+	email = luiz.cordeiro@mobilityhouse.com
 [color]
 	ui = true
 	pager = true
 [core]
 	excludesfile = /Users/acacio/.gitignore_global
-	editor = emacs
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+	editor = vim
 [merge]
 	tool = vimdiff
 [alias]
 	a  = add
 	av = add -pv
 	co = checkout
+	cb = checkout -b
 	br = branch
 	ci = commit
 	st = status
 	ph = push
-	p  = pull
+	pl  = pull
 	cp = cherry-pick
 	df = diff
 	tr = log --color --graph --all --decorate --pretty=oneline
 	trf = log --color --graph --all --decorate
-	unst = reset HEAD --
+	un = reset HEAD --
+	hard = reset --hard HEAD --
 	last = log -1 HEAD
 [push]
-	default = simple
+	default = tracking
 [help]
 	autocorrect = 1

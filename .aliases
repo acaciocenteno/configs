@@ -1,6 +1,5 @@
 # Directory navigation
 alias .="cd .."
-alias -- -="cd -"
 
 alias ..="cd ../.."
 alias ...="cd ../../.."
@@ -20,7 +19,7 @@ ls --color > /dev/null 2>&1
 
 if [ $? -eq 0 ] || [ -f /usr/local/Cellar/coreutils/8.23/libexec/gnubin/ls ]; then
 	# Using GNU ls
-	export LS_COLORS="$LS_COLORS:di=38;05;31:ex=38;05;64:*.gz=0;38;05;202:*.zip=0;38;05;202:*.bz2=*.zip=0;38;05;202:ln=38;05;38"
+	export LS_COLORS="$LS_COLORS:di=38;05;31:ex=38;05;64:*.gz=0;38;05;202:*.zip=0;38;05;202:*.bz2=0;38;05;202:*.zip=0;38;05;202:ln=38;05;38"
 	colorflag="--color"
 
 	if [ -f /usr/local/Cellar/coreutils/8.23/libexec/gnubin/ls ]; then
@@ -42,7 +41,7 @@ alias la="${ls_command} -lash ${colorflag}"
 # Other commands
 alias gr="egrep -Inri --color"
 alias a="ack"
-alias e="emacs -nw --no-splash"
+alias en="emacs -nw --no-splash"
 alias v="vim"
 alias i="ipython --no-confirm-exit --quiet --pprint --no-banner"
 alias ff="open -b org.mozilla.firefox"
@@ -54,8 +53,18 @@ alias t="sudo tcpdump -xX -s0 -iany -nn"
 # git aliases
 alias g="git"
 alias gs="git status -sb"
+alias ga="git add"
+alias gc="git commit"
+alias gps="git push"
+alias gpl="git pull"
 alias gl="git log --all --graph --decorate --oneline --abbrev-commit"
+alias org="emacs ~/.cur.org"
+alias h="sudo halt"
 
+# "Launchers" for Xfce run plugin
+alias e="emacs"
+alias c="chrome"
+alias tor="chrome --incognito --proxy-server=socks5://127.0.0.1:9050"
 # Usefull scripts
 alias lip="ifconfig | grep -e '\(^[[:alpha:]]\|inet[[:blank:]]\)' | awk '{ if ( index(\$0, \":\") != 0 ) print \$1; else print \"\t\"\$2; }'"
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
@@ -67,6 +76,8 @@ if [ "${os}" == "Darwin" -a -f ".aliases.osx" ]; then
 	source .aliases.osx
 elif [ "${os}" == "Linux" -a -f ".aliases.linux" ]; then
 	source .aliases.linux
+elif [ "${os}" == "FreeBSD" -a -f ".aliases.bsd" ]; then
+	source .aliases.bsd
 fi
 
 # Percol based kill

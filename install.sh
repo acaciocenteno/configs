@@ -1,7 +1,8 @@
 #!/bin/bash
 
-find . -type f -name '.*' -exec cp {} $HOME \;
-cp -R .vim ~
+find . -type f -name '.*' -exec cp -r {} $HOME \;
+cp -rf .vim $HOME
+cp -rf .emacs.d $HOME
 cd ~
 source .bashrc
 

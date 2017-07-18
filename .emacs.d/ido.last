@@ -1,0 +1,45 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/acacio/" . "terapia/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/acacio/"
+ "/home/acacio/terapia/"
+ "/home/acacio/org/"
+ "/home/acacio/diario/"
+ "/home/acacio/.emacs.d/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "senhas.txt.gpg"
+ "05.10.15.org.gpg"
+ "duvidas.org"
+ "sobrevivencialismo.org"
+ "38.org"
+ "21.09.15.org.gpg"
+ "14.09.15.org.gpg"
+ "11.09.15.org"
+ "teste.gpg"
+ "keys_bsd.lisp"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/acacio/" (22039 50335 829948 0) "emacs.tar.gz" "Planilha de Benefícios - Padrão.xls" ".scala_history" ".cur.org" "tmp/" "terapia/" "diario/" ".serverauth.946" "teste.py" ".serverauth.1146" "tor.txt" ".thumbnails/" ".freebsd.sh" "acacio-theme.el" "images/" "senhas.txt.gpg" ".p" ".wpa_cli_history" "code/" ".vim/" "teste_emacs/" "Downloads/" ".emacs.d.bkp/" "emacs-demo/" ".serverauth.1142" "teste" "teste.c" "ats-project/" ".gitconfig" ".git-prompt.sh" ".zsh/" ".xsession-errors" ".xsession" ".aliases" ".gnupg/" ".xinitrc.bkp" ".dbus/" "org/" ".emacs~" ".bsdconfig_uses_sudo" "config~" ".zshenv" ".pki/" "config" ".viminfo" ".histfile" ".ssh/" ".emacs.d/" "Desktop/" ".gvfs/" ".Xauthority" ".lesshst" ".local/" ".ICEauthority" ".cache/" ".config/" ".rnd" ".zcompdump" ".xinitrc" ".zshrc" ".rhosts" ".mail_aliases" ".profile" ".cshrc" ".mailrc" ".shrc" ".login_conf" ".login" "../" "./")
+
+ ("/home/acacio/terapia/" (22036 15212 501409 0) "quem_sou.org.gpg" "05.10.15.org.gpg" "21.09.15.org.gpg" "14.09.15.org.gpg" "28.09.15.org.gpg" "../" "./")
+
+ ("/home/acacio/org/" (22037 6831 494315 0) "influxdb.txt" "41.org" "40.org" "teste.gpg" "39.org" "hls_nginx.org" "sobrevivencialismo.org" "38.org" "palestra_victor.org" "37.org" "docker.org" "#35.org#" "36.org" "34.org~" "35.org" "34.org" "../" "./")
+
+ ("/home/acacio/.emacs.d/" (22028 3808 45161 0) "ac-comphist.dat" "org.lisp" "keys_osx.lisp" "keys_bsd.lisp" "ido.last~" "session.2e982e501-4d91-11e5-8287-002215ee00c2" "ido.last" "acacio-theme.el" "init.el" "tramp" "backups/" "elpa/" "auto-save-list/" "../" "./")
+
+ ("/home/acacio/diario/" (22009 58641 358877 0) "16.09.15.org.gpg" "14.09.15.org.gpg" "11.09.15.org.gpg" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
