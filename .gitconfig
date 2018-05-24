@@ -1,32 +1,58 @@
 [user]
 	name = Luiz Cordeiro
 	email = luiz.cordeiro@mobilityhouse.com
+	signingkey = 1DA16E28F32C6946EB2828B6CF84FFDD68856F9C
 [color]
 	ui = true
 	pager = true
+    branch = true
+	decorate = true
+	diff = true
+	grep = true
+	interactive = true
+	showbranch = true
+	status = true
 [core]
 	excludesfile = /Users/acacio/.gitignore_global
 	editor = vim
+    whitespace = tab-in-indent,tabwidth=4
+	pager = less -sFXRMW
 [merge]
 	tool = vimdiff
 [alias]
+	cl = clone
 	a  = add
-	av = add -pv
 	co = checkout
 	cb = checkout -b
 	br = branch
 	ci = commit
 	st = status
+    ss = stash
 	ph = push
-	pl  = pull
+	pl = pull
+    pr = pull --rebase
 	cp = cherry-pick
 	df = diff
+    m = merge --ff-only
+    ds = diff --staged
+	ft = fetch
 	tr = log --color --graph --all --decorate --pretty=oneline
 	trf = log --color --graph --all --decorate
+    l = log -40 --branches=* --graph --decorate --abbrev-commit --oneline --all
 	un = reset HEAD --
 	hard = reset --hard HEAD --
 	last = log -1 HEAD
+    cvp = commit -vp
+    ca = commit --amend
+    can = commit --amend --no-edit
+    r = remote -v
+    fat = fetch --all --tags
 [push]
 	default = tracking
 [help]
 	autocorrect = 1
+[grep]
+    extendRegexp = true
+    lineNumber = true
+[rebase]
+    autosquash = true
