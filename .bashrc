@@ -10,7 +10,6 @@ fi
 
 source .aliases
 source .git-completion.bash
-source .firstrun
 
 # Git Config
 export GIT_PS1_SHOWCOLORHINTS=1

@@ -5,6 +5,22 @@ alias msc="cd ~/Music"
 alias mov="cd ~/Movies"
 alias pic="cd ~/Pictures"
 
+if [[ -d /usr/local/Cellar/coreutils ]]; then
+    # Using GNU ls
+	ls_command=$(find /usr/local/Cellar/coreutils -name "ls")
+    export LS_COLORS="$LS_COLORS:di=38;05;31:ex=38;05;64:*.gz=0;38;05;202:*.zip=0;38;05;202:*.bz2=0;38;05;202:*.zip=0;38;05;202:ln=38;05;38"
+    colorflag="--color"
+
+else
+    # Using BSD ls
+    export CLICOLOR=1
+    colorflag="-G"
+fi
+
+alias ls="${ls_command} ${colorflag}"
+alias l="${ls_command} -lsh ${colorflag}"
+alias la="${ls_command} -lash ${colorflag}"
+
 # Sys Updates
 alias update="sudo softwareupdate -i -a"
 alias update_all="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup;"
