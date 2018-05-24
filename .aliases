@@ -20,14 +20,8 @@ alias pl="pylint -f colorized -r n --msg-template='{C}:{msg_id}:{line:3d},{colum
 alias s="sudo -i"
 alias h="history"
 alias tdmp="sudo tcpdump -xX -s0 -iany -nn"
-alias t="task"
-alias ta="task add"
-alias tl="task list"
 
-task_set_done() {
-	task $1 done
-}
-alias td="task_set_done"
+source ~/.aliases.task
 
 # git aliases
 alias g="git"
