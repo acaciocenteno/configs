@@ -53,3 +53,10 @@ fi
 # Percol based kill
 alias pk="ps aux | percol | awk '{ print \$2 }' | xargs kill"
 alias spk="sudo ps aux | percol | awk '{ print \$2 }' | xargs kill"
+
+# Docker
+alias d="docker"
+alias dc="docker-compose"
+alias dps="docker ps"
+alias dpsa="docker ps --all"
+alias de="docker exec -ti"
