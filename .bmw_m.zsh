@@ -1,0 +1,16 @@
+_sym="▰"
+light_blue="$FG[032]"
+dark_blue="$FG[018]"
+red="$FG[124]"
+gray="$FG[246]"
+space=""
+#m="\xF0\x9D\x99\x88"
+#m="%{$FX[italic]%}M"
+m=""
+
+bmw_1="%{$light_blue%}${_sym}"
+bmw_2="%{$dark_blue%}${_sym}"
+bmw_3="%{$red%}${_sym}"
+bmw_4="%{$gray%}${m}"
+
+bmw_m="${bmw_1}${bmw_2}${bmw_3}${space}${bmw_4} %{$reset_color%}"
