@@ -64,13 +64,15 @@ ZSH_THEME="avit"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-source ~/.aliases
-source $ZSH/oh-my-zsh.sh
-
 plugins=(
+	battery
 	git
+	pass
 	zsh-autosuggestions
 )
+
+source $ZSH/oh-my-zsh.sh
+source ~/.aliases
 
 # User configuration
 
@@ -102,6 +104,34 @@ plugins=(
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/code/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.oh-my-zsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh
 source ~/.bmw_m.zsh
 LENGTH=${#PROMPT}
 export PROMPT="${bmw_m} ${PROMPT[2,${LENGTH}]}"
+
+export PATH=$PATH:/usr/share/clang/scan-build-7/bin:~/.cargo/bin
+
+##########################################################################
+# Differentiate between local and global history
+#unsetopt share_history
+setopt share_history
+
+bindkey "^[OA" up-line-or-local-history
+bindkey "^[OB" down-line-or-local-history
+
+up-line-or-local-history() {
+    zle set-local-history 1
+    zle up-line-or-history
+    zle set-local-history 0
+}
+zle -N up-line-or-local-history
+down-line-or-local-history() {
+    zle set-local-history 1
+    zle down-line-or-history
+    zle set-local-history 0
+}
+zle -N down-line-or-local-history
+
+bindkey "^[[1;5A" up-line-or-history    # [CTRL] + Cursor up
+bindkey "^[[1;5B" down-line-or-history  # [CTRL] + Cursor down
+##########################################################################
