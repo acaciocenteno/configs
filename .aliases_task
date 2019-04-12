@@ -1,0 +1,26 @@
+alias t="task"
+alias ta="task add"
+alias tl="task list"
+alias tc="task calendar"
+
+task_set() {
+	task $2 $1 ${@:3}
+}
+
+task_set_done() {
+	task_set done $@
+}
+
+task_set_start() {
+	task_set start $@
+}
+
+task_set_modify() {
+	task_set modify $@
+}
+
+alias td="task_set_done"
+alias ts="task_set_start"
+alias tm="task_set_modify"
+
+
