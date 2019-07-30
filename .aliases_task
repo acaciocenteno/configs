@@ -23,4 +23,4 @@ alias td="task_set_done"
 alias ts="task_set_start"
 alias tm="task_set_modify"
 
-
+alias org="emacs ~/.cur.org"

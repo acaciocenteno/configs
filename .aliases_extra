@@ -1,0 +1,6 @@
+alias tor="chrome --incognito --proxy-server=socks5://127.0.0.1:9050"
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# Percol based kill
+alias pk="ps aux | percol | awk '{ print \$2 }' | xargs kill"
+alias spk="sudo ps aux | percol | awk '{ print \$2 }' | xargs kill"
