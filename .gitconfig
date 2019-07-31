@@ -5,7 +5,7 @@
 [color]
 	ui = true
 	pager = true
-    branch = true
+	branch = true
 	decorate = true
 	diff = true
 	grep = true
@@ -15,7 +15,7 @@
 [core]
 	excludesfile = /Users/acacio/.gitignore_global
 	editor = vim
-    whitespace = tab-in-indent,tabwidth=4
+	whitespace = tab-in-indent,tabwidth=4
 	pager = less -sFXRMW
 [merge]
 	tool = vimdiff
@@ -27,32 +27,33 @@
 	br = branch
 	ci = commit
 	st = status
-    ss = stash
+	ss = stash
 	ph = push
 	pl = pull
-    pr = pull --rebase
+	pr = pull --rebase
 	cp = cherry-pick
 	df = diff
-    m = merge --ff-only
-    ds = diff --staged
+	m = merge --ff-only
+	ds = diff --staged
 	ft = fetch
 	tr = log --color --graph --all --decorate --pretty=oneline
 	trf = log --color --graph --all --decorate
-    l = log -40 --branches=* --graph --decorate --abbrev-commit --oneline --all
+	l = log -40 --branches=* --graph --decorate --abbrev-commit --oneline --all
 	un = reset HEAD --
 	hard = reset --hard HEAD --
 	last = log -1 HEAD
-    cvp = commit -vp
-    ca = commit --amend
-    can = commit --amend --no-edit
-    r = remote -v
-    fat = fetch --all --tags
+	cvp = commit -vp
+	ca = commit --amend
+	can = commit --amend --no-edit
+	r = remote -v
+	fat = fetch --all --tags
+	sm = submodule
 [push]
 	default = tracking
 [help]
 	autocorrect = 1
 [grep]
-    extendRegexp = true
-    lineNumber = true
+	extendRegexp = true
+	lineNumber = true
 [rebase]
-    autosquash = true
+	autosquash = true
