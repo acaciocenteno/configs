@@ -20,6 +20,10 @@ alias h="history"
 alias tdmp="sudo tcpdump -xX -s0 -iany -nn"
 alias hub="HTTP_PROXY= http_proxy= hub"
 
+mcd() {
+    test -d "$1" || mkdir -p "$1" && cd "$1"
+}
+
 source ~/.aliases_task
 source ~/.aliases_git
 source ~/.aliases_docker
