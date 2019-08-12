@@ -20,8 +20,39 @@ alias h="history"
 alias tdmp="sudo tcpdump -xX -s0 -iany -nn"
 alias hub="HTTP_PROXY= http_proxy= hub"
 
+# Some goodies from:
+# https://unix.stackexchange.com/questions/6628/what-customizations-have-you-done-on-your-shell-profile-to-increase-productivity
+
 mcd() {
     test -d "$1" || mkdir -p "$1" && cd "$1"
+}
+
+mtd()
+{
+    local dir
+    dir=$(mktemp -d)
+    if test -n "$dir"
+    then
+        if test -d "$dir"
+        then
+            echo "$dir"
+            cd "$dir"
+        else
+            echo "mktemp directory $dir does not exist"
+        fi
+    else
+        echo "mktemp didn't work"
+    fi
+}
+
+# (c) 2007 stefan w. GPLv3          
+function up {
+    ups=""
+    for i in $(seq 1 $1)
+    do
+        ups=$ups"../"
+    done
+    cd $ups
 }
 
 source ~/.aliases_task
