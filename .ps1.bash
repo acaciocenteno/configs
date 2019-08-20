@@ -38,6 +38,13 @@ user_and_host_when_not_in_tmux() {
 
 user_and_host_when_not_in_tmux
 
-export PS1_HOSTDIR="${workdir_color}\w\e[m"
-export PS1_GIT_BRANCH="${gitbranch_color}${branch}\e[m"
-export PS1="${PS1_HOSTNAME}${PS1_HOSTDIR}${PS1_GIT_BRANCH}\$(status)\n\\$ "
+winblows="$(uname -r | grep Microsoft)"
+PS1_HOSTDIR="${workdir_color}\w\e[m"
+PS1_GIT_BRANCH="${gitbranch_color}${branch}\e[m"
+
+if [[ "$winblows" != "" ]]; then
+    # Git prompt on Windows is incredibly slow... :-/
+    export PS1="${PS1_HOSTDIR}\n\\$ "
+else
+    export PS1="${PS1_HOSTNAME}${PS1_HOSTDIR}${PS1_GIT_BRANCH}\$(status)\n\\$ "
+fi
