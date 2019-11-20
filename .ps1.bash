@@ -46,5 +46,5 @@ if [[ "$winblows" != "" ]]; then
     # Git prompt on Windows is incredibly slow... :-/
     export PS1="${PS1_HOSTDIR}\n\\$ "
 else
-    export PS1="${PS1_HOSTNAME}${PS1_HOSTDIR}${PS1_GIT_BRANCH}\$(status)\n\\$ "
+    export PS1="${PS1_HOSTNAME}${PS1_HOSTDIR}${PS1_GIT_BRANCH}\n\\$ "
 fi
