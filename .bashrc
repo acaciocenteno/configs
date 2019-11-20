@@ -8,5 +8,8 @@ if [ "$COLORTERM" == "xfce4-terminal" ]; then
 	source ~/.bash_profile
 fi
 
-source ~/.aliases
-source ~/.ps1.bash
+if [ ! -e BASH_CONFIG ]; then
+	source ~/.aliases
+	source ~/.ps1.bash
+	export BASH_CONFIG=1
+fi

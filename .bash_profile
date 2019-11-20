@@ -15,4 +15,8 @@ export LESS_TERMCAP_ZV=$(tput rsubm)
 export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
 
-
+if [ ! -e BASH_CONFIG ]; then
+	source ~/.aliases
+	source ~/.ps1.bash
+	export BASH_CONFIG=1
+fi
