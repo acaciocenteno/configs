@@ -4,6 +4,12 @@ alias s="sudo"
 alias sa="sudo apt"
 alias si="sudo -i"
 alias halt="sudo halt" # Useful?
+alias ..="cd .."
+alias ...="cd ../.."
+alias 2.="cd ../.."
+alias 3.="cd ../../.."
+alias 4.="cd ../../../.."
+alias 5.="cd ../../../../.."
 
 # Directory navigation
 alias p="pushd"
